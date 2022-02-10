@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+
+{% block titulo %} Nosotros {% endblock %} 
+
+{%block contenido %}
+<div class="card">
+  <div class="card-header text-center text-primary"><h1>Crear un nuevo registro</h1></div>
+  <div class="card-body">
+    <h4 class="card-title t text-success">Datos de Envios</h4>
+    {% include 'libros/form.html' %}
+  </div>
+  <div class="card-footer text-muted"></div>
+</div>
+
+{% endblock %}
+
+
+

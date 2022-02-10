@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block titulo %} Lista de Libros {% endblock %}
+{%block contenido %}
+
+<div class="card">
+  <div class="card-header text-center text-primary"><h1>Agregar Contenido</h1></div>
+  <div class="card-body">
+    <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Crear Datos</a>
+  
+    <table class="table table-bordered border-primary">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cantidad</th>
+          <th>Crecedora</th>
+          <th>Engordadora</th>
+          <th>Inversion</th>
+          <th>Imagen</th>
+          <th>Descripcion</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for  Libro in libros %}
+        <tr>
+          
+          <td class="table-primary">{{ libro.id }}</td>
+          <td class="table-secondary">{{ libro.cantidad }}</td>
+          <td class="table-success">{{ libro.engordadora }}</td>
+          <td class="table-danger">{{ libro.crecedora }}</td>
+          <td class="table-warning">{{ libro.inversion }}</td>
+          <td class="table-info">
+            <img src="{{ libro.imagen.url }}" height="100"/>
+          </td>
+          <td class="table-primary">{{ libro.descripcion }}</td>
+          <td class="table-warning">{{libro.total }}</td>
+          <td class="table-dark">
+          <a name="" id="" class="btn btn-primary" href="{% url 'editar' %}" role="button">Editar</a>
+          <a name="" id="" class="btn btn-danger" href="/" role="button">Borrar</a>
+        </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+</div class="card-footer text-muted">
+</div>
+</div>
+{% endblock %}
